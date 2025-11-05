@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <% if (locals.posts){ %>
+        <% posts.forEach(post => { %>
+            <%- include("partials/post-preview.ejs") %>
+        <% }) %>
+    <% } else { %>
+        <span>No posts to feature.</span>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,35 +1,21 @@
 <%- include("partials/header.ejs") %>
 <div class="container">
     <div class="view-post-body">
-        <% if (locals.postName) { %>
-            <h2><%= postName %></h2>
+        <% if (locals.post) { %>
+            <h2><%= post.postName %></h2>
+            <p><%= post.postDescription %></p>
+            <img src= <%= post.postImage %> />
+            <p><%= post.postBody %></p>
         <% } else{ %>
-            <h2>No post available</h2>
-        <% } %>
-
-        <% if (locals.imageFile) { %>
-            <img src= <%= imageFile %> />
-        <% } else{ %>
-            <span>No image available</span>
-        <% } %>
-
-        <% if (locals.postBody) { %>
-            <p><%= postBody %></p>
-        <% } else{ %>
-            <p>No body available</p>
+            <p>No post to display</p>
         <% } %>
     </div>
     <div class="view-post-creator">
-        <% if (locals.postCreator) { %>
-            <span><%= postCreator %></span>
+        <% if (locals.post) { %>
+            <span><%= post.postAuthor %></span>
+            <p><%= post.postTime %></p>
         <% } else{ %>
-            <span>No creator available</span>
-        <% } %>
-
-        <% if (locals.postDate) { %>
-            <p><%= postDate %></p>
-        <% } else{ %>
-            <p>No date available</p>
+            <span>No info available</span>
         <% } %>
     </div>
 </div>

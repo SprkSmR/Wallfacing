@@ -5,12 +5,17 @@
         <p>Share your deepest thoughts hoping that nobody else reads them... or read those of people who thought so.</p>
     </div>
     <div class="popular-posts">
-        <% if (locals.featuredPosts) { %>
-            <% featuredPosts.forEach(post => { %>
-                <%- include("partials/post-preview-featured.ejs") %>
-            <% }) %>         
-        <% } else{%>
-            <span>No posts to feature.</span>
+        <% if (postList.length == 0) { %>
+            <h2>No posts available</h2>
+        <% } else{ %>
+            <% for( let i = 0; i < postList.length && i < 3; i++ ) { %>
+                <a href="/view-post/<%= i%>" class="view-post-preview">
+                    <img src=<%= postList[i].postImage %> width="320" height="320">
+                    <p><%= postList[i].postDescription %></p>
+                    <%= postList[i].postTime %> - <%= postList[i].postAuthor %>
+                </a>
+                <br/>
+            <% } %>
         <% } %>
     </div>
     <div class="rules">

@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <form action="/create-post" method="post">
+        <label for="postTitle">Post title: </label><br/>
+        <input type="text" id="postTitle" name="postTitle" placeholder="Write your title here!" required><br/>
+
+        <label for="postImage">Post image: </label><br/>
+        <input type="file" id="postImage" name="postImage" required><br/>
+
+        <label for="postBody">Post body: </label><br/>
+        <textarea id="postBody" name="postBody" required rows="8" cols="100">
+        Write your text here!
+        </textarea><br/>
+
+        <label for="postAuthor">Add your alias: </label><br/>
+        <input type="text" id="postAuthor" name="postAuthor" required><br/>
+
+        <label for="postDescription">Add a brief description: </label><br/>
+        <textarea id="postDescription" name="postDescription" required rows="4" cols="50">
+        Write your description here!
+        </textarea><br/>
+
+        <input type="submit" value="Post">
+
+    </form>
+    <div class="create-post-title">
+
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

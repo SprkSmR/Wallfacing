@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs") %>
-<div class="container">
-    <form action="/create-post" method="post">
+<div class="create-content">
+    <form action="/create-post" enctype="multipart/form-data" method="post">
         <label for="postTitle">Post title: </label><br/>
         <input type="text" id="postTitle" name="postTitle" placeholder="Write your title here!" required><br/>
 

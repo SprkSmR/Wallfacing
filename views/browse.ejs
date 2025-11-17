@@ -1,12 +1,12 @@
 <%- include("partials/header.ejs") %>
-<div class="container">
+<div class="browse-content">
         <div class="view-post-body">
             <% if (postList.length == 0) { %>
                 <h2>No posts available</h2>
             <% } else{ %>
                 <% for( let i = 0; i < postList.length; i++ ) { %>
                     <a href="/view-post/<%= i%>" class="view-post-preview">
-                        <img src=<%= postList[i].postImage %> width="320" height="320">
+                        <img src="uploads/<%= postList[i].postImage %>" width="320" height="320">
                         <p><%= postList[i].postDescription %></p>
                         <%= postList[i].postTime %> - <%= postList[i].postAuthor %>
                     </a>

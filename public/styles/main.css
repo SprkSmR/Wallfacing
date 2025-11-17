@@ -1,0 +1,28 @@
+@import url(./header.css);
+@import url(./body.css);
+@import url(./footer.css);
+
+body{
+    display: grid;
+    background-color: red;
+    grid-template-columns: auto;
+    grid-template-rows: 8% 75% 16%;
+    grid-template-areas: 
+    'header'
+    'content'
+    'footer';
+    gap: 10%;
+}
+
+.header-content {
+    grid-area: header;
+    height: 8vh;
+}
+
+.about-content, .index-content, .view-context, .browse-content, .create-content {
+    grid-area: content;
+}
+
+.footer-content {
+    grid-area: footer;
+}

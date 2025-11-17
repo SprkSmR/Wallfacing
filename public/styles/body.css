@@ -1,0 +1,31 @@
+.index-content {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 15% 35% 50%;
+    grid-template-areas: 
+    'intro intro intro'
+    'featured featured featured'
+    'rules rules rules';
+    gap: 10%
+}
+
+.intro {
+    grid-area: intro;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular-posts {
+    grid-area: featured;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60vh;
+}
+
+.rules {
+    grid-area: rules;
+}

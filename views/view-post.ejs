@@ -1,5 +1,6 @@
 <%- include("partials/header.ejs") %>
-<div class="container">
+
+<div class="view-content">
     <div class="view-post-body">
         <% if (locals.post) { %>
             <h2><%= post.postName %></h2>
@@ -19,4 +20,5 @@
         <% } %>
     </div>
 </div>
+
 <%- include("partials/footer.ejs") %>

@@ -1,6 +1,4 @@
 import express from "express";
-//import bodyParser from "body-parser";
-//import fileUpload from "express-fileupload";
 import multer from "multer";
 import fs from "fs";
 
@@ -19,9 +17,7 @@ function Post(postTitle, postImage, postBody, postAuthor, postDescription){
     this.postTime = new Date();
 }
 
-//app.use(fileUpload());
 app.use(express.static("public"));
-//app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
     res.render("index.ejs", {postList: postList});

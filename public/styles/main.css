@@ -2,9 +2,16 @@
 @import url(./body.css);
 @import url(./footer.css);
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body{
+    margin: 0;
     display: grid;
-    background-color: red;
+    background-color: #FFCC80;
     grid-template-columns: auto;
     grid-template-rows: 8% 75% 16%;
     grid-template-areas: 

@@ -1,10 +1,14 @@
 import express from "express";
 import multer from "multer";
-import fs from "fs";
+import fs, { mkdir } from "fs";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const app = express();
 const port = 3000;
 const upload = multer({ storage: multer.memoryStorage() });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 var postList = [];
 
@@ -60,3 +64,37 @@ app.get("/about", (req, res) => {
 app.listen(port, () => {
     console.log("Now hosting!");
 });
+
+process.on('SIGINT', () => {
+    let uploadFileRoute = `${__dirname}/public/uploads/`;
+
+    fs.readdir(uploadFileRoute, (err, files) => {
+        if (err) {
+            console.log("No folder available");
+        } else{
+            if (!files.length){
+                console.log("No files detected");
+            }
+            process.exit(0);
+        }
+    });
+
+    fs.rm(uploadFileRoute, {recursive: true, force: true}, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        else{
+            console.log("Uploaded files deleted")
+            fs.mkdir(uploadFileRoute, (err) => {
+                if (err) {
+                    console.log(err);
+                }
+                else{
+                    console.log("Uploads folder created again.");
+                }
+            });
+        }
+    });
+  
+    process.exit(0);
+})

@@ -61,23 +61,33 @@ app.get("/about", (req, res) => {
     res.render("about.ejs");
 })
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
     console.log("Now hosting!");
 });
 
-process.on('SIGINT', () => {
+process.on('SIGINT', clearFiles);
+
+function closeServer() {
+    server.close(function () {
+        console.log("Server closed!");
+    });
+}
+
+function clearFiles() {
     let uploadFileRoute = `${__dirname}/public/uploads/`;
 
+    //the nesting below is horrible
     fs.readdir(uploadFileRoute, (err, files) => {
         if (err) {
             console.log("No folder available");
         } else{
             if (!files.length){
                 console.log("No files detected");
+                closeServer();
+                process.exit();
             }
-            process.exit(0);
         }
-    });
+    }); 
 
     fs.rm(uploadFileRoute, {recursive: true, force: true}, (err) => {
         if (err) {
@@ -91,10 +101,10 @@ process.on('SIGINT', () => {
                 }
                 else{
                     console.log("Uploads folder created again.");
+                    closeServer();
+                    process.exit();
                 }
             });
         }
-    });
-  
-    process.exit(0);
-})
+    });  
+}

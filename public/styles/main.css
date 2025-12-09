@@ -13,7 +13,7 @@ body{
     display: grid;
     background-color: #FFCC80;
     grid-template-columns: auto;
-    grid-template-rows: 8% 75% 16%;
+    grid-template-rows: 7% 78% 15%;
     grid-template-areas: 
     'header'
     'content'
@@ -22,8 +22,9 @@ body{
 }
 
 .header-content {
+    position: sticky;
+    top: 0;
     grid-area: header;
-    height: 8vh;
 }
 
 .about-content, .index-content, .view-context, .browse-content, .create-content {

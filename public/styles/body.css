@@ -1,12 +1,13 @@
+/* BEGIN index/landing page CSS rules */
 .index-content {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1fr 5fr 3.5fr;
     grid-template-areas: 
-    'intro '
+    'intro'
     'featured'
     'rules';
-    gap: 10%
+    gap: 10%;
 }
 
 .intro {
@@ -37,8 +38,8 @@
 }
 
 .view-post-preview img {
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .rules {
@@ -55,3 +56,48 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+/* END index/landing page CSS rules */
+
+/* BEGIN post page CSS rules */
+.create-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+    'title author'
+    'image description'
+    'image description'
+    'body body'
+    'body body'
+    'body body';
+    gap: 10%;
+}
+
+.create-title {
+    grid-area: title;
+    display: inline-flex;
+}
+
+.create-image {
+    grid-area: image;
+    display: inline-flex;
+}
+
+.create-body {
+    grid-area: body;
+    display: inline-flex;
+}
+
+.create-author {
+    grid-area: author;
+    display: inline-flex;
+}
+
+.create-description {
+    grid-area: description;
+    display: inline-flex;
+}
+
+
+/* END post page CSS rules */

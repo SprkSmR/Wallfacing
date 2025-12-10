@@ -27,7 +27,7 @@ body{
     grid-area: header;
 }
 
-.about-content, .index-content, .view-context, .browse-content, .create-content {
+.about-content, .index-content, .view-content, .browse-content, .create-content {
     grid-area: content;
 }
 

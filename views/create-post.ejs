@@ -1,24 +1,34 @@
 <%- include("partials/header.ejs") %>
 <div class="create-content">
     <form action="/create-post" enctype="multipart/form-data" method="post">
+        <div class="create-title">
         <label for="postTitle">Post title: </label><br/>
         <input type="text" id="postTitle" name="postTitle" placeholder="Write your title here!" required><br/>
+        </div>
 
-        <label for="postImage">Post image: </label><br/>
-        <input type="file" id="postImage" name="postImage" required><br/>
+        <div class="create-author">
+            <label for="postAuthor">Add your alias: </label><br/>
+            <input type="text" id="postAuthor" name="postAuthor" required><br/>
+        </div>
 
-        <label for="postBody">Post body: </label><br/>
-        <textarea id="postBody" name="postBody" required rows="8" cols="100">
-        Write your text here!
-        </textarea><br/>
+        <div class="create-image">
+            <label for="postImage">Post image: </label><br/>
+            <input type="file" id="postImage" name="postImage" required><br/>
+        </div>
 
-        <label for="postAuthor">Add your alias: </label><br/>
-        <input type="text" id="postAuthor" name="postAuthor" required><br/>
+        <div class="create-description">
+            <label for="postDescription">Add a brief description: </label><br/>
+            <textarea id="postDescription" name="postDescription" required rows="4" cols="50">
+            Write your description here!
+            </textarea><br/>
+        </div>
 
-        <label for="postDescription">Add a brief description: </label><br/>
-        <textarea id="postDescription" name="postDescription" required rows="4" cols="50">
-        Write your description here!
-        </textarea><br/>
+        <div class="create-body">
+            <label for="postBody">Post body: </label><br/>
+            <textarea id="postBody" name="postBody" required rows="8" cols="100">
+            Write your text here!
+            </textarea><br/>
+        </div>
 
         <input type="submit" value="Post">
 

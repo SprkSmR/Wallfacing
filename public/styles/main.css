@@ -8,17 +8,21 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     margin: 0;
     display: grid;
-    background-color: #FFCC80;
+    background-color: #FFF3E0;
     grid-template-columns: auto;
     grid-template-rows: 7% 78% 15%;
     grid-template-areas: 
     'header'
     'content'
     'footer';
-    gap: 10%;
+    gap: 5%;
 }
 
 .header-content {
@@ -28,6 +32,7 @@ body{
 }
 
 .about-content, .index-content, .view-content, .browse-content, .create-content {
+    background-color: #FFCC80;
     grid-area: content;
 }
 

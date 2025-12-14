@@ -12,14 +12,14 @@
             <% for( let i = 0; i < postList.length && i < 3; i++ ) { %>
                 <a href="/view-post/<%= i%>" class="view-post-preview">
                     <img src="uploads/<%= postList[i].postImage %>">
-                    <p><%= postList[i].postDescription %></p>
-                    <%= postList[i].postTime %> - <%= postList[i].postAuthor %>
+                    <%= postList[i].postDescription %>
+                    <p><%= postList[i].postTime %> - <%= postList[i].postAuthor %></p> 
                 </a>
                 <br/>
             <% } %>
         <% } %>
     </div>
-    <div class="rules">
+    <div id="guidelines" class="rules">
         <h3>The guidelines </h3>
         <ul>
             <li class="rule">

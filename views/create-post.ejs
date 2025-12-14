@@ -1,9 +1,12 @@
 <%- include("partials/header.ejs") %>
-<div class="create-content">
-    <form action="/create-post" enctype="multipart/form-data" method="post">
+    <form class="create-content" action="/create-post" enctype="multipart/form-data" method="post">
+        <div class="create-heading"> 
+            <h3>Write your own post! Please, adhere to the <a href="/#guidelines">guidelines</a> </h3>
+        </div>
+        
         <div class="create-title">
-        <label for="postTitle">Post title: </label><br/>
-        <input type="text" id="postTitle" name="postTitle" placeholder="Write your title here!" required><br/>
+            <label for="postTitle">Post title: </label><br/>
+            <input type="text" id="postTitle" name="postTitle" placeholder="Write your title here!" required><br/>
         </div>
 
         <div class="create-author">
@@ -30,11 +33,9 @@
             </textarea><br/>
         </div>
 
-        <input type="submit" value="Post">
+        <div class="create-submit">
+            <input type="submit" value="Post">
+        </div>
 
     </form>
-    <div class="create-post-title">
-
-    </div>
-</div>
 <%- include("partials/footer.ejs") %>

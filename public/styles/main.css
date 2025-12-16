@@ -22,7 +22,6 @@ body{
     'header'
     'content'
     'footer';
-    gap: 5%;
 }
 
 .header-content {

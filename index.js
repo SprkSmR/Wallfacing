@@ -11,6 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 var postList = [];
+var currentPaging = 0;
 
 function Post(postTitle, postImage, postBody, postAuthor, postDescription){
     this.postTitle = postTitle;
@@ -27,8 +28,9 @@ app.get("/", (req, res) => {
     res.render("index.ejs", {postList: postList});
 });
 
-app.get("/browse", (req, res) => {
-    res.render("browse.ejs", {postList: postList});
+app.get("/browse{/:paging}", (req, res) => {
+    currentPaging = req.params.paging ?? 0;
+    res.render("browse.ejs", {postList: postList, paging: currentPaging});
 })
 
 app.get("/view-post/:id", (req, res) => {

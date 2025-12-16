@@ -24,10 +24,21 @@
     grid-area: featured;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     background-color: #3E2723;    
+}
+
+.popular-posts .view-post-preview {
+    max-width: 33%;
+    min-height: 100%;
+}
+
+.popular-posts .view-post-preview img {
+    max-width: 300px;
+    max-height: auto;
+    padding: 1rem;
 }
 
 .rules {
@@ -98,6 +109,39 @@
     justify-content: center;
 }
 
+/* END post page CSS rules */
+
+/* BEGIN browse page CSS rules */
+.browse-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 85% 15%;
+    grid-template-areas: 
+    'view-post view-post'
+    'controller controller';
+}
+.view-post-body{
+    grid-area: view-post;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    padding: 3rem;
+}
+
+.view-post-body a{
+    grid-area: controller;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.browse-controllers button{
+    width: 30%;
+}
+
+/* END browse page CSS rules */
+
+
 /* BEGIN commons CSS rules */
 .view-post-preview {
     padding: 1rem;
@@ -107,12 +151,6 @@
     align-items: center;
     color: black;
     background-color:#FFF3E0;
-}
-
-.view-post-preview img {
-    max-width: 300px;
-    max-height: auto;
-    padding: 1rem;
 }
 
 .view-post-preview p {

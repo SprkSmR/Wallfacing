@@ -4,7 +4,7 @@
             <% if (postList.length == 0) { %>
                 <h2>No posts available</h2>
             <% } else{ %>
-                <% for( let i = 0; i < postList.length; i++ ) { %>
+                <% for( let i = 0 + (3*paging); i < 3 || postList.length - (3*paging); i++ ) { %>
                     <a href="/view-post/<%= i%>" class="view-post-preview">
                         <img src="uploads/<%= postList[i].postImage %>" width="320" height="320">
                         <p><%= postList[i].postDescription %></p>
@@ -13,6 +13,14 @@
                     <br/>
                 <% } %>
             <% } %>
+        </div>
+        <div class="browse-controllers">
+            <a href"/browse/<%= paging - 1%>>
+                <button ><--</button>
+            </a>
+            <a href"/browse/<%= paging + 1%>>
+                <button >--></button>
+            </a>
         </div>
 </div>
 <%- include("partials/footer.ejs") %>

@@ -30,17 +30,18 @@ app.get("/", (req, res) => {
 
 app.get("/browse{/:paging}", (req, res) => {
     currentPaging = req.params.paging ?? 0;
+    console.log("Current paging "+currentPaging);
     res.render("browse.ejs", {postList: postList, paging: currentPaging});
-})
+});
 
 app.get("/view-post/:id", (req, res) => {
     let currentPost = postList[req.params.id];
     res.render("view-post.ejs", {post: currentPost});
-})
+});
 
 app.get("/create-post", (req, res) => {
     res.render("create-post.ejs");
-})
+});
 
 app.post("/create-post", upload.single("postImage"), (req, res) => {
     let fileExt = req.file.mimetype.split('/')[1];
@@ -61,7 +62,7 @@ app.post("/create-post", upload.single("postImage"), (req, res) => {
 
 app.get("/about", (req, res) => {
     res.render("about.ejs");
-})
+});
 
 let server = app.listen(port, () => {
     console.log("Now hosting!");

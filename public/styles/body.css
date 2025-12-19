@@ -120,24 +120,37 @@
     'view-post view-post'
     'controller controller';
 }
-.view-post-body{
+
+.view-post-body {
     grid-area: view-post;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
+    flex-direction: column;
     padding: 3rem;
 }
 
-.view-post-body a{
+.view-post-body .view-post-preview {
+    width: 75%;
+    max-height: 33%;
+}
+
+.view-post-body .view-post-preview:nth-child(3){
+    align-self: flex-end;
+}
+
+.browse-controllers{
     grid-area: controller;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.browse-controllers button{
-    width: 30%;
+.browse-controllers button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
+
 
 /* END browse page CSS rules */
 

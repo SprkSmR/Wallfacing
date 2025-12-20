@@ -3,11 +3,11 @@
         <div class="view-post-body">
             <% if (postList.length == 0) { %>
                 <h2>No posts available</h2>
-            <% } else{ %>
-                <% for( let i = 0 + (3*paging); i < (postList.length - (3*paging)); i++ ) { %>
-                    <% console.log(i)%>
+            <% } else{  %>
+                <% for( let i = 0 + (3*paging); i < postList.length && i < (3+3*paging); i++ ) { %>
                     <a href="/view-post/<%= i%>" class="view-post-preview">
-                        <img src="uploads/<%= postList[i].postImage %>" width="320" height="320">
+                        <h3><%= postList[i].postTitle%></h3>
+                        <img src="/uploads/<%= postList[i].postImage %>" width="320" height="320">
                         <p><%= postList[i].postDescription %></p>
                         <%= postList[i].postTime %> - <%= postList[i].postAuthor %>
                     </a>
@@ -16,15 +16,15 @@
             <% } %>
         </div>
         <div class="browse-controllers">
-            <% if (paging > 0){ %>
+            <% if (paging > 0) { %>
                 <a href="/browse/<%= Number(paging) - Number(1) %>">
-                    <button ><--</button>
+                    <button><--</button>
                 </a>
             <% } %>
 
-            <% if (postList.length > 3+(3*paging)){ %>
+            <% if ((postList.length - (3+3*paging)) > 0) { %>
                 <a href="/browse/<%= Number(paging) + Number(1) %>">
-                    <button >--></button>
+                    <button>--></button>
                 </a>
             <% } %>
 

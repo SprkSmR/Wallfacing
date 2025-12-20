@@ -115,7 +115,7 @@
 .browse-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 85% 15%;
+    grid-template-rows: auto 5rem;
     grid-template-areas: 
     'view-post view-post'
     'controller controller';
@@ -129,8 +129,13 @@
 }
 
 .view-post-body .view-post-preview {
-    width: 75%;
-    max-height: 33%;
+    width: 70%;
+}
+
+.view-post-body .view-post-preview img {
+    max-width: 300px;
+    max-height: auto;
+    padding: 1rem;
 }
 
 .view-post-body .view-post-preview:nth-child(3){

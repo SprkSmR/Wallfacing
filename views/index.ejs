@@ -11,7 +11,7 @@
         <% } else{ %>
             <% for( let i = 0; i < postList.length && i < 3; i++ ) { %>
                 <a href="/view-post/<%= i%>" class="view-post-preview">
-                    <img src="uploads/<%= postList[i].postImage %>">
+                    <img src="/uploads/<%= postList[i].postImage %>">
                     <%= postList[i].postDescription %>
                     <p><%= postList[i].postTime %> - <%= postList[i].postAuthor %></p> 
                 </a>

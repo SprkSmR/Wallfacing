@@ -17,7 +17,7 @@ body{
     display: grid;
     background-color: #FFF3E0;
     grid-template-columns: auto;
-    grid-template-rows: 7% 78% 15%;
+    grid-template-rows: 5rem auto 10rem;
     grid-template-areas: 
     'header'
     'content'

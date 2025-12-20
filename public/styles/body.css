@@ -203,8 +203,24 @@
     padding: 1rem;
     background-color:#FFF3E0;
 }
-
 /* END view post page CSS rules */
+
+/* BEGIN about page CSS rules */
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem; 
+}
+
+.about-motivation{
+    font-style: italic;
+}
+
+/* END about page CSS rules */
+
 
 /* BEGIN commons CSS rules */
 .view-post-preview {

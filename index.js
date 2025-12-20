@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
 
 app.get("/browse{/:paging}", (req, res) => {
     currentPaging = req.params.paging ?? 0;
-    console.log("Current paging "+currentPaging);
     res.render("browse.ejs", {postList: postList, paging: currentPaging});
 });
 
@@ -56,7 +55,6 @@ app.post("/create-post", upload.single("postImage"), (req, res) => {
         )
     fs.writeFileSync(filePath, req.file.buffer);
     postList.push(newPost);
-    console.log(newPost);
     res.redirect("/browse");
 });
 

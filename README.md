@@ -20,7 +20,7 @@ out the way I wanted to (that is, what I imagined were just wireframes scribbled
 - Graceful shutdown. That means I had to (re-)learn what graceful shutdown was. And actually implement it. It's done
 so that it doesn't leave any ports hanging, it also clears all the uploaded images and keeps it nice and tidy.
 
--Image handling. Whenever a user creates a forum post, it uploads the image to my computer and then it uses that 
+- Image handling. Whenever a user creates a forum post, it uploads the image to my computer and then it uses that 
 same image to display as a preview! (Of course there are like a thousand security risks for this approach, but for
 a PoC it works ok). 
 

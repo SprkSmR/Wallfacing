@@ -1,0 +1,40 @@
+@import url(./header.css);
+@import url(./body.css);
+@import url(./footer.css);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+    display: grid;
+    background-color: #FFF3E0;
+    grid-template-columns: auto;
+    grid-template-rows: 5rem auto 10rem;
+    grid-template-areas: 
+    'header'
+    'content'
+    'footer';
+}
+
+.header-content {
+    position: sticky;
+    top: 0;
+    grid-area: header;
+}
+
+.about-content, .index-content, .view-content, .browse-content, .create-content {
+    background-color: #FFCC80;
+    grid-area: content;
+}
+
+.footer-content {
+    grid-area: footer;
+}

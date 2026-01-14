@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<div class="view-content">
+    <% if (locals.post) { %>
+        <h2 class="view-title"><%= post.postTitle %></h2>
+        <div class="view-image">
+            <img src="/uploads/<%= post.postImage %>" width="320" height="320">
+        </div>
+        <div class="view-body">
+            <p><%= post.postBody %></p>
+        </div>
+        <div class="view-author">
+            <p>Written by: <b><%= post.postAuthor %></b></p>
+            <p>At: <%= post.postTime %></p>
+        </div>
+        <div class="view-description">
+            <p><%= post.postDescription %></p>
+        </div>
+    <% } else{ %>
+        <p>No post to display</p>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

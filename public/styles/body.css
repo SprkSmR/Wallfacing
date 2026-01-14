@@ -1,0 +1,241 @@
+/* BEGIN index/landing page CSS rules */
+.h
+
+.index-content {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 5fr 3.5fr;
+    grid-template-areas: 
+    'intro'
+    'featured'
+    'rules';
+}
+
+.intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular-posts {
+    padding: 2rem;
+    grid-area: featured;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #3E2723;    
+}
+
+.popular-posts .view-post-preview {
+    max-width: 33%;
+    min-height: 100%;
+}
+
+.popular-posts .view-post-preview img {
+    max-width: 300px;
+    max-height: auto;
+    padding: 1rem;
+}
+
+.rules {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    grid-area: rules;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.rule {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* END index/landing page CSS rules */
+
+/* BEGIN post page CSS rules */
+.create-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.5fr repeat(6, 1fr) 0.5fr;
+    grid-template-areas:
+    'heading heading'
+    'title author'
+    'image description'
+    'image description'
+    'body body'
+    'body body'
+    'body body'
+    'submit submit';
+}
+
+.create-content > div {
+    padding: 1rem 3rem 1rem;
+    display: flex;
+}
+
+.create-heading {
+    grid-area: heading;
+    justify-content: center;
+}
+
+.create-title {
+    grid-area: title;
+}
+
+.create-image {
+    grid-area: image;
+}
+
+.create-body {
+    grid-area: body;
+}
+
+.create-author {
+    grid-area: author;
+}
+
+.create-description {
+    grid-area: description;
+}
+
+.create-submit {
+    grid-area: submit;
+    justify-content: center;
+}
+
+/* END post page CSS rules */
+
+/* BEGIN browse page CSS rules */
+.browse-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 5rem;
+    grid-template-areas: 
+    'view-post view-post'
+    'controller controller';
+}
+
+.view-post-body {
+    grid-area: view-post;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.view-post-body .view-post-preview {
+    width: 70%;
+}
+
+.view-post-body .view-post-preview img {
+    max-width: 300px;
+    max-height: auto;
+    padding: 1rem;
+}
+
+.view-post-body .view-post-preview:nth-child(3){
+    align-self: flex-end;
+}
+
+.browse-controllers{
+    grid-area: controller;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.browse-controllers button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* END browse page CSS rules */
+
+/* BEGIN view post page CSS rules */
+.view-content{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    grid-template-rows: 1fr 3fr 4 fr;
+    grid-template-areas: 
+    'view-title view-author'
+    'view-image view-description'
+    'view-body view-description';
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.view-title{
+    grid-area: view-title;
+    display: flex;
+    justify-content: center;
+}
+
+.view-image{
+    grid-area: view-image;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.view-body{
+    grid-area: view-body;
+    display: flex;
+}
+
+.view-author{
+    grid-area: view-author;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color:#FFF3E0;
+}
+
+.view-description{
+    grid-area: view-description;
+    display: flex;
+    padding: 1rem;
+    background-color:#FFF3E0;
+}
+/* END view post page CSS rules */
+
+/* BEGIN about page CSS rules */
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem; 
+}
+
+.about-motivation{
+    font-style: italic;
+}
+
+/* END about page CSS rules */
+
+
+/* BEGIN commons CSS rules */
+.view-post-preview {
+    padding: 1rem;
+    display: flex;
+    flex: 1 1 0px;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    background-color:#FFF3E0;
+}
+
+.view-post-preview p {
+    color: #3E2723;
+    font-weight: bold;
+}
+
+/* END commons CSS rules */

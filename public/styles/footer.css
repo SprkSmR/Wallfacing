@@ -1,0 +1,24 @@
+.footer-content{
+    height: 100%;
+    background-color: #FFF3E0;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: auto;
+}
+
+.social-icons{
+    display: inline-flex;
+    justify-content: center;
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.copyright{
+    display: inline-flex;
+    justify-content: center;
+}

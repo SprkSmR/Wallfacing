@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<div class="index-content">
+    <div class="intro">
+        <h2>A forum to expose your thoughts.</h2>
+        <p>Share your deepest thoughts hoping that nobody else reads them... or read those of people who thought so.</p>
+    </div>
+    <div class="popular-posts">
+        <% if (postList.length == 0) { %>
+            <h2>No posts available</h2>
+        <% } else{ %>
+            <% for( let i = 0; i < postList.length && i < 3; i++ ) { %>
+                <a href="/view-post/<%= i%>" class="view-post-preview">
+                    <img src="/uploads/<%= postList[i].postImage %>">
+                    <%= postList[i].postDescription %>
+                    <p><%= postList[i].postTime %> - <%= postList[i].postAuthor %></p> 
+                </a>
+                <br/>
+            <% } %>
+        <% } %>
+    </div>
+    <div id="guidelines" class="rules">
+        <h3>The guidelines </h3>
+        <ul>
+            <li class="rule">
+                    <span>Keep the particularly offensive within you.</span>
+                    <br/>
+                    This is a place to rant. However, even if some people annoy you, some of them may even be reading these posts. Hell, you may be the annoying one for someone else. Nobody feels safe in a space where you get called out.
+            </li>
+            <li class="rule">
+                    <span>No personal information, specially about others.</span>
+                    <br/>
+                    This is an anonymous place.  What you say in Wallfacing stays in Wallfacing.
+            </li>
+            <li class="rule">
+                    <span>No excessive judging</span>
+                    <br/>
+                    People here pour their hearts into their posts. This is a safe space to share your true self and it should not come at a risk of personal attacks.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
